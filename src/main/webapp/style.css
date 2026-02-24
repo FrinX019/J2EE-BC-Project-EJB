@@ -42,6 +42,37 @@ body {
   font-size: 13px;
 }
 
+.auth-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.auth-tabs .tab-btn {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  background: #f4f4f5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  color: #666;
+}
+
+.auth-tabs .tab-btn.active {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.auth-error {
+  color: #b91c1c;
+  font-size: 13px;
+  min-height: 18px;
+}
+
 .login-card form {
   display: flex;
   flex-direction: column;

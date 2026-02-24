@@ -110,9 +110,12 @@ async function deleteJob(id) {
 
 // ── SHARED UTILS ─────────────────────────────────────────────
 async function api(path, method = 'GET', body = null) {
+    const token = sessionStorage.getItem('jwt');
+    const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
+    if (token) headers['Authorization'] = 'Bearer ' + token;
     const res = await fetch(API + path, {
         method,
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers,
         body: body ? JSON.stringify(body) : null
     });
     const text = await res.text();
